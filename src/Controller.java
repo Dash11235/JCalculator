@@ -30,7 +30,7 @@ public class Controller implements ActionListener, MouseListener {
         String[] numberArray = numbers.split("");
 
 
-        if (!viewpanel.getInput().equals("error")) {
+        if (!viewpanel.getInput().equals("error") && !viewpanel.getInput().equals("Infinity")) {
             for (int i = 0; i < numberArray.length; i++) {
                 if (o.equals(numberArray[i])) {
                     String str = model.addNum(viewpanel.getInput(), numberArray[i]);
@@ -43,6 +43,7 @@ public class Controller implements ActionListener, MouseListener {
                 if(!str.equals("error")) {
                     try {
                         model.addHistory("src/cache/cache.txt", viewpanel.getInput() + "=" + str);
+                        model.cacheControl("src/cache/cache.txt");
                     } catch (IOException ioException) {
                         ioException.printStackTrace();
                     }

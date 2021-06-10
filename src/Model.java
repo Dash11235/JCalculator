@@ -287,7 +287,7 @@ public class Model {
 
         if(flick){
             if(bracktList.size() > 1) {
-                for (int i = 0; i < bracktList.size() - 1; i++) {
+                for (int i = 0; i < bracktList.size(); i++) {
                     if (!notTo.contains(bracktList.get(i))) {
                         bracktList.set(i, Double.toString(Double.parseDouble(bracktList.get(i)) * (-1)));
                     }
@@ -471,7 +471,7 @@ public class Model {
      */
 
     public void cacheControl(String path) throws IOException {
-        File file = new File(path + "/cache.txt");
+        File file = new File(path);
         Scanner scan = new Scanner(file);
 
         ArrayList<String> strs = new ArrayList<String>();
@@ -480,7 +480,7 @@ public class Model {
             strs.add(scan.nextLine());
         }
 
-        if (strs.size() > 21){
+        if (strs.size() > 7){
 
             FileWriter fw = new FileWriter(file, true);
             PrintWriter pw = new PrintWriter(file);
