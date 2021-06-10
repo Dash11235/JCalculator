@@ -256,5 +256,4 @@ public class ViewPanel extends JPanel {
         }
         fastMenu.show(this,x,y);
     }
-
 }

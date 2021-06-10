@@ -39,8 +39,10 @@ public class Model {
         //Der Input wird zu einem CharArray ungewandelt, sodass man den letzen Char entfernen kann.
         char[] inputArray = input.toCharArray();
 
+        System.out.println(input);
+
         //Sodass es zu keinem error kommt, der durch dan Versuch etwas zu löschen, obwohl nichts eingegeben wurde verursacht wird, wird geschaut, ob überhaupt etwas eingegeben wird.
-        if (input != "") {
+        if (!input.equals("")) {
             //Das letzte Element im charArray wird durch einen Leeren char ersetzt
             inputArray[inputArray.length - 1] = ' ';
         }

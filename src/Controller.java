@@ -39,7 +39,10 @@ public class Controller implements ActionListener, MouseListener {
             }
 
             if (o.equals("=") || o.equals("calculate")) {
-                String str = model.calculate(viewpanel.getInput());
+                String str = "";
+                if(!viewpanel.getInput().equals("")) {
+                    str = model.calculate(viewpanel.getInput());
+                }
                 if(!str.equals("error")) {
                     try {
                         model.addHistory("src/cache/cache.txt", viewpanel.getInput() + "=" + str);
